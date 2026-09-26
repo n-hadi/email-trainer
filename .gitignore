@@ -1,0 +1,13 @@
+node_modules
+
+# Secrets: only the example file is public
+.env
+.env.*
+!.env.example
+
+# Your exercise history
+data
+
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,20 @@
+{
+  "name": "email-trainer",
+  "scripts": {
+    "dev": "node --watch --env-file-if-exists=.env server.js"
+  },
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "express": "^5.2.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "recharts": "^3.10.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.1"
+  }
+}

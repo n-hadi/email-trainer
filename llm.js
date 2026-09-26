@@ -48,7 +48,7 @@ The email must be writable in 3-4 minutes, so keep the situation to what a short
 Fields:
 - title: a few words naming the situation.
 - text: the brief the trainee sees, addressed to them in the informal second person singular. Say who they write to and why, include any incoming message they are replying to, and give every fact they need. 60-150 words. Do not list the grading checklist and do not hint at pitfalls.
-- facts: the concrete facts the email may rely on.
+- facts: the concrete facts the email may rely on. Every fact must be stated in text; the trainee sees nothing else.
 - requiredActions: what a good email must accomplish. Used only for grading, never shown.
 - constraints: what the email must not do (for example commit to something the writer cannot authorise), and the register expected for this recipient under the communication style. Used only for grading, never shown.`,
     `Workplace:\n${businessEnvironment}\n\nCommunication style:\n${communicationStyle}\n\nScenario type: ${type}\nDifficulty: ${difficulty}. ${DIFFICULTY[difficulty]}`,
@@ -67,9 +67,11 @@ Communication style:
 ${configuration.communicationStyle}
 
 Scenario (${scenario.type}): ${scenario.title}
+
+Brief (the only thing the writer saw):
 ${scenario.text}
 
-Facts:
+Grading notes, never shown to the writer. Facts:
 ${bullets(scenario.facts)}
 
 Required actions:
@@ -89,6 +91,7 @@ export function evaluate(exercise) {
   const { subject, body } = exercise.submission;
   return ask(
     `You review emails written in a timed business-writing exercise. Write every field in ${exercise.configuration.language}.
+The writer saw only the brief. Anything the brief does not state (a name, a number, a date) they could not know, so never fault them for omitting it or for making up a placeholder such as their own name in the signature.
 A separate tool already reports spelling, grammar, punctuation and capitalization errors, so do not mention those.
 Judge the email as a whole, in context: Does it accomplish the task? Is important information missing, or is anything wrong compared with the facts? Do register and style suit the recipient and the stated communication style? Is anything awkward, unclear, needlessly long or inappropriate? Does it commit to something the writer is not authorised to promise?
 Wording that differs from what you would have written is fine. Only flag real problems.

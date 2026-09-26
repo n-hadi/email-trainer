@@ -24,3 +24,21 @@ API keys stay on the local server; the browser never sees them.
 
 - `ANTHROPIC_MODEL`: defaults to `claude-opus-5`
 - `LANGUAGETOOL_URL`: the free public API by default; point it at a self-hosted LanguageTool for more thorough checks and no rate limit
+
+## Screenshots
+
+Describe your workplace, pick a language and difficulty:
+
+![Setup](example_images/example_img_1.png)
+
+Write the email against the clock, with no spellcheck or AI help:
+
+![Timed exercise](example_images/example_img_2.png)
+
+Review: language errors, feedback on the content and a model answer:
+
+![Review](example_images/example_img_3.png)
+
+Analysis across all stored exercises:
+
+![Analysis](example_images/example_img_4.png)
